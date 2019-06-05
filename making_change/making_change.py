@@ -34,8 +34,6 @@ import math
 #             quotient = math.floor(amount / coin_types[-1])
 
 
-# the real mcenzie
-
 def making_change(amount, denominations):
     ways_to_change = [0 for amount in range(amount+1)]
     ways_to_change[0] = 1
