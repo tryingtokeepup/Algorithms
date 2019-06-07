@@ -38,9 +38,10 @@ def making_change(amount, denominations):
     # this allows us to iterate over 0 all the way through 10, which is technically 11 elements
     ways_to_change = [0 for amount in range(amount+1)]
     ways_to_change[0] = 1
-    for denom in denominations:
+    for denom in denominations:  # this will be pennies, nickels, dimes, half-dollars, quarters
+        # we don't try to divide 0 by pennies and stuff lol
         for amount in range(1, amount+1):
-            if denom <= amount:
+            if denom <= amount:  # for example, if amount is dime, we can put denoms up to dimes into the dime
                 ways_to_change[amount] += ways_to_change[amount - denom]
     return print(ways_to_change[amount])
 
