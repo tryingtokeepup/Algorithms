@@ -35,6 +35,7 @@ import math
 
 
 def making_change(amount, denominations):
+    # this allows us to iterate over 0 all the way through 10, which is technically 11 elements
     ways_to_change = [0 for amount in range(amount+1)]
     ways_to_change[0] = 1
     for denom in denominations:

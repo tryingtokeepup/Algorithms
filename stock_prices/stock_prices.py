@@ -51,27 +51,42 @@ def find_max_profit(prices):
 #     return max_profit
 
 
-# 2	def get_max_profit(array):
-# 3
-# 4	    # for the rise
-# 5	    global_max = 0
-# 6	    # global_min = 0
-# 7	    if len(array) < 2:
-# 8	        print("hey, please put in at least 2 values into the array!")
-# 9	        return global_max
-# 10
-# 11	    i = 0
-# 12
-# 13	    while i < len(array)-1:
-# 14	        curr_price = array[i]
-# 15	        max_potential_price = max(array[i+1:])
-# 16	        # we need to slice the array
-# 17	        if max_potential_price - curr_price > global_max:
-# 18	            global_max = max_potential_price - curr_price
-# 19	        i += 1
-# 20	    return global_max
-# 21
-# 22	print(get_max_profit([1050, 270, 343, 100, 2]))
+def get_max_profit(array):
+
+    # for the rise
+    global_max = 0
+    # global_min = 0
+    if len(array) < 2:
+        print("hey, please put in at least 2 values into the array!")
+        return global_max
+
+	    i = 0
+
+	    while i < len(array)-1:
+	        curr_price = array[i]
+	        max_potential_price = max(array[i+1:])
+	        # we need to slice the array
+	        if max_potential_price - curr_price > global_max:
+	            global_max = max_potential_price - curr_price
+	        i += 1
+	    return global_max
+
+	print(get_max_profit([1050, 270, 343, 100, 2]))
 find_max_profit([1050, 270, 1540, 3800, 2])
 find_max_profit([10, 7, 5, 8, 11, 9])
 find_max_profit([100, 90, 80, 50, 20, 10])
+
+# incredible solution from Laryna
+# def find_max_profit(prices):
+#   pass
+#   low = prices[0]
+#   profit = prices[1] - low
+
+#   for price in prices[1:]:
+#     profit = max(price - low, profit)
+#     low = min(price, low)
+
+#   return profit
+
+
+# print(find_max_profit([1050, 270, 1540, 3800, 2])) 

@@ -7,12 +7,12 @@ def rock_paper_scissors(n):
     # return needs to be a list
     # we also need possible choices
 
-    hand = ['rock', 'paper', 'scissor']
+    hand = ['rock', 'paper', 'scissors']
     results = []
     if n == 0:
         return [[]]
     if n == 1:
-        return [['rock'], ['paper'], ['scissor']]
+        return [['rock'], ['paper'], ['scissors']]
 
     def recursive_append(current_n, awaiting=[]):
         # if current_n == 0, take completed awaiting and append to results
