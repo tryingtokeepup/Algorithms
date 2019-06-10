@@ -24,6 +24,22 @@ def recipe_batches(recipe, ingredients):
     return batches_possible
 
 
+# genius solution, using min
+def recipe_batches_erick(recipe, ingredients):
+    store = []
+
+    if len(ingredients) != len(recipe):
+        return 0
+    else:
+        for i in recipe:
+            for j in ingredients:
+                if(i == j):
+                    store.append(ingredients[j] / recipe[i])
+    num_of_batches = int(min(store))
+
+    return num_of_batches
+
+
 if __name__ == '__main__':
     # Change the entries of these dictionaries to test
     # your implementation with different inputs
