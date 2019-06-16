@@ -7,11 +7,11 @@ def flip_vertical_axis(matrix):
     j = 0
 
     while i <= rows:
-       while j <= (c//2):
+        while j <= (columns//2):
             temp = 0
             temp = matrix[i][j]
-            matrix[i][j] = matrix[i][c-j]
-            matrix[i][c-j] = temp
+            matrix[i][j] = matrix[i][columns-j]
+            matrix[i][columns-j] = temp
 
             j += 1
         i += 1
