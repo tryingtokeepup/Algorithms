@@ -60,18 +60,19 @@ def get_max_profit(array):
         print("hey, please put in at least 2 values into the array!")
         return global_max
 
-	    i = 0
+    i = 0
 
-	    while i < len(array)-1:
-	        curr_price = array[i]
-	        max_potential_price = max(array[i+1:])
-	        # we need to slice the array
-	        if max_potential_price - curr_price > global_max:
-	            global_max = max_potential_price - curr_price
-	        i += 1
-	    return global_max
+       while i < len(array)-1:
+            curr_price = array[i]
+            max_potential_price = max(array[i+1:])
+               # we need to slice the array
+            if max_potential_price - curr_price > global_max:
+                global_max = max_potential_price - curr_price
+            i += 1
+        return global_max
 
-	print(get_max_profit([1050, 270, 343, 100, 2]))
+        print(get_max_profit([1050, 270, 343, 100, 2]))
+
 find_max_profit([1050, 270, 1540, 3800, 2])
 find_max_profit([10, 7, 5, 8, 11, 9])
 find_max_profit([100, 90, 80, 50, 20, 10])
@@ -89,4 +90,4 @@ find_max_profit([100, 90, 80, 50, 20, 10])
 #   return profit
 
 
-# print(find_max_profit([1050, 270, 1540, 3800, 2])) 
+# print(find_max_profit([1050, 270, 1540, 3800, 2]))

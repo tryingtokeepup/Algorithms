@@ -14,7 +14,8 @@ def recipe_batches(recipe, ingredients):
         print(ingredients[key])
 
         batches_possible_with_current_ingedient = math.floor(
-            ingredients[key] / recipe[key])
+            #ingredients[milk] == 198 / recipe[milk] == 100
+            ingredients[key] / recipe[key])  # if you floor(1.98)
         print(batches_possible_with_current_ingedient)
         if recipe[key] <= ingredients[key] and batches_possible > batches_possible_with_current_ingedient or batches_possible == 0:
             batches_possible = batches_possible_with_current_ingedient
@@ -24,18 +25,20 @@ def recipe_batches(recipe, ingredients):
     return batches_possible
 
 
-# genius solution, using min
+# genius solution, using min // ask erick how he managed to utilize
 def recipe_batches_erick(recipe, ingredients):
     store = []
-
-    if len(ingredients) != len(recipe):
+    # well, this is not strictly true, you can have more ingredients in the cupboard than the recipe
+    # Erick, switch these two conditions, change the conditional to be more than
+    # can't have more things required than that in the cupboard
+    if len(recipe) > len(ingredients):
         return 0
     else:
         for i in recipe:
             for j in ingredients:
                 if(i == j):
-                    store.append(ingredients[j] / recipe[i])
-    num_of_batches = int(min(store))
+                    store.append(ingredients[j] // recipe[i])
+    num_of_batches = min(store)
 
     return num_of_batches
 
